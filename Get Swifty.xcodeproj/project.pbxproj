@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F995847F8F39BE87C13A551 /* Pods_Get_Swifty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5A618A2724A88078B01B63 /* Pods_Get_Swifty.framework */; };
+		DF4971AD2077D44E00F2EDCB /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4971AC2077D44E00F2EDCB /* OTPViewController.swift */; };
 		DFDC13012077A68200624F0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC13002077A68200624F0F /* AppDelegate.swift */; };
 		DFDC13032077A68200624F0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC13022077A68200624F0F /* ViewController.swift */; };
 		DFDC13062077A68200624F0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFDC13042077A68200624F0F /* Main.storyboard */; };
@@ -15,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D5A618A2724A88078B01B63 /* Pods_Get_Swifty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Get_Swifty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0EBEC8E9776B3FD5AB89C6F /* Pods-Get Swifty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get Swifty.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Get Swifty/Pods-Get Swifty.debug.xcconfig"; sourceTree = "<group>"; };
+		DF4971AC2077D44E00F2EDCB /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		DFDC12FD2077A68200624F0F /* Get Swifty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Get Swifty.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFDC13002077A68200624F0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFDC13022077A68200624F0F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +27,7 @@
 		DFDC13072077A68200624F0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFDC130A2077A68200624F0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFDC130C2077A68200624F0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC97FDD0B649A755A9137198 /* Pods-Get Swifty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get Swifty.release.xcconfig"; path = "Pods/Target Support Files/Pods-Get Swifty/Pods-Get Swifty.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F995847F8F39BE87C13A551 /* Pods_Get_Swifty.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +47,8 @@
 			children = (
 				DFDC12FF2077A68200624F0F /* Get Swifty */,
 				DFDC12FE2077A68200624F0F /* Products */,
+				F8F4B366A7E9BEE1F49EFE59 /* Pods */,
+				E5A52B31D56A2B1F53223E0C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				DFDC13002077A68200624F0F /* AppDelegate.swift */,
+				DF4971AC2077D44E00F2EDCB /* OTPViewController.swift */,
 				DFDC13022077A68200624F0F /* ViewController.swift */,
 				DFDC13042077A68200624F0F /* Main.storyboard */,
 				DFDC13072077A68200624F0F /* Assets.xcassets */,
@@ -64,6 +74,23 @@
 			path = "Get Swifty";
 			sourceTree = "<group>";
 		};
+		E5A52B31D56A2B1F53223E0C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D5A618A2724A88078B01B63 /* Pods_Get_Swifty.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8F4B366A7E9BEE1F49EFE59 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B0EBEC8E9776B3FD5AB89C6F /* Pods-Get Swifty.debug.xcconfig */,
+				EC97FDD0B649A755A9137198 /* Pods-Get Swifty.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DFDC130F2077A68200624F0F /* Build configuration list for PBXNativeTarget "Get Swifty" */;
 			buildPhases = (
+				79BF7463062D8514ECA81408 /* [CP] Check Pods Manifest.lock */,
 				DFDC12F92077A68200624F0F /* Sources */,
 				DFDC12FA2077A68200624F0F /* Frameworks */,
 				DFDC12FB2077A68200624F0F /* Resources */,
+				78D538726B63F556B3E12043 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,11 +160,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		78D538726B63F556B3E12043 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Get Swifty/Pods-Get Swifty-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Get Swifty/Pods-Get Swifty-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		79BF7463062D8514ECA81408 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Get Swifty-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DFDC12F92077A68200624F0F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF4971AD2077D44E00F2EDCB /* OTPViewController.swift in Sources */,
 				DFDC13032077A68200624F0F /* ViewController.swift in Sources */,
 				DFDC13012077A68200624F0F /* AppDelegate.swift in Sources */,
 			);
@@ -272,6 +343,7 @@
 		};
 		DFDC13102077A68200624F0F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0EBEC8E9776B3FD5AB89C6F /* Pods-Get Swifty.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -288,6 +360,7 @@
 		};
 		DFDC13112077A68200624F0F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC97FDD0B649A755A9137198 /* Pods-Get Swifty.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
