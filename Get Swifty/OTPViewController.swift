@@ -44,6 +44,7 @@ class OTPViewController: UIViewController {
             case .success:
                 if let JSON = response.result.value as? [String:Any]{
                     self.storeUserInfo(json: JSON)
+                    self.performSegue(withIdentifier: "toSearchView", sender: self)
                 }
                 
             case .failure(let error):
@@ -62,16 +63,12 @@ class OTPViewController: UIViewController {
         let user_id = user["user_id"] as! String
         let mobile = self.phoneNumber
         let name = user["full_name"] as! String
-        
-//        print(access_token)
-//        print(user_id)
-//        print(name)
-//        print(mobile)
-        
+
         let defaults = UserDefaults.standard
-        defaults.set(access_token, forKey: String)
-        
-        
+        defaults.set(access_token, forKey: "token")
+        defaults.set(user_id, forKey: "user_id")
+        defaults.set(mobile, forKey: "mobile")
+        defaults.set(name, forKey: "name")
         
     }
     
