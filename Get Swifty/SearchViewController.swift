@@ -36,21 +36,37 @@ class SearchViewController: UIViewController , CLLocationManagerDelegate {
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
-        
-        
+     
+        performSegue(withIdentifier: "toPosts", sender: self)
+        savecoordinates()
     }
+    
+    func savecoordinates(){
+        
+        let defaults = UserDefaults.standard
+        defaults.set(latitude, forKey: "latitude")
+        defaults.set(longitude, forKey: "longitude")
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let location = locations[locations.count - 1]
         
         if location.horizontalAccuracy > 0 {
-          locationManager.stopUpdatingLocation()
             
+            locationManager.stopUpdatingLocation()
             longitude = location.coordinate.longitude
             latitude = location.coordinate.latitude
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let posts = segue.destination as? PostViewController {
             
-            print("longitude: \(longitude)")
-            print("latitude: \(latitude)")
+            posts.latitude = latitude
+            posts.longitude = longitude
+            posts.query = searchQuery.text!
         }
     }
     

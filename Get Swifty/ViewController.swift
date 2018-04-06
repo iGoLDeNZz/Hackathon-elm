@@ -17,10 +17,20 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkIfUserAlreadyAuthed()
         self.navigationController?.isNavigationBarHidden = true
         // Do any additional setup after loading the view, typically from a nib.
     }
+
     
+    func checkIfUserAlreadyAuthed(){
+        let defaults = UserDefaults.standard
+        let token = defaults.string(forKey: "token")
+        print(token)
+        if token != nil {
+            self.performSegue(withIdentifier: "toSearch", sender: self)
+        }
+    }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         self.navigationController?.isNavigationBarHidden = false
@@ -63,8 +73,10 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if let OTP = segue.destination as? OTPViewController {
+        if segue.identifier == "toSearch" {
+            
+        }
+       else if let OTP = segue.destination as? OTPViewController {
             OTP.phoneNumber = phoneNum.text!
         }
     }
