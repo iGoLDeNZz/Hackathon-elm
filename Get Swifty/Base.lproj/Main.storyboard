@@ -15,7 +15,7 @@
         <scene sceneID="aVf-BS-03a">
             <objects>
                 <navigationController id="Y9i-Vt-bZN" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="POi-lo-ntj">
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="POi-lo-ntj">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -558,20 +558,21 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZY-xP-eNu">
                                 <rect key="frame" x="0.0" y="310" width="375" height="358"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIV-WJ-uI7">
-                                        <rect key="frame" x="327" y="8" width="40" height="33"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="33" id="3r6-yd-4Df"/>
-                                            <constraint firstAttribute="width" constant="40" id="cj3-Kh-ETX"/>
-                                        </constraints>
-                                        <state key="normal" title="photos" image="photos"/>
-                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photos" translatesAutoresizingMaskIntoConstraints="NO" id="r3N-OX-0M7">
+                                        <rect key="frame" x="124" y="27" width="126" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="IIV-WJ-uI7" secondAttribute="trailing" constant="8" id="fe1-6U-srz"/>
-                                </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7W-E0-BDe">
+                                <rect key="frame" x="163" y="474" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="fyX-qF-1sO" eventType="touchUpInside" id="rGW-Ed-ZaI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -589,7 +590,6 @@
                             <constraint firstItem="983-Ck-CPo" firstAttribute="top" secondItem="fRp-mP-cp0" secondAttribute="bottom" constant="4" id="bvH-eh-WZO"/>
                             <constraint firstItem="983-Ck-CPo" firstAttribute="top" secondItem="8ko-6I-9ei" secondAttribute="bottom" id="c9i-jc-SnW"/>
                             <constraint firstItem="FZY-xP-eNu" firstAttribute="centerX" secondItem="uwk-dv-UJa" secondAttribute="centerX" id="dmc-BD-aEe"/>
-                            <constraint firstItem="IIV-WJ-uI7" firstAttribute="top" secondItem="0nc-vk-lV9" secondAttribute="bottom" constant="8" id="dnR-fb-CHy"/>
                             <constraint firstItem="FZY-xP-eNu" firstAttribute="bottom" secondItem="uwk-dv-UJa" secondAttribute="bottom" constant="1" id="juG-yM-6A3"/>
                             <constraint firstItem="FZY-xP-eNu" firstAttribute="top" secondItem="0nc-vk-lV9" secondAttribute="bottom" id="kCI-hB-PbY"/>
                             <constraint firstItem="3WH-0U-xB6" firstAttribute="top" secondItem="983-Ck-CPo" secondAttribute="bottom" id="nPe-2X-fCM"/>
@@ -607,11 +607,12 @@
                         <outlet property="TagsTextField" destination="3WH-0U-xB6" id="9tE-zs-fao"/>
                         <outlet property="TitleTextField" destination="983-Ck-CPo" id="JpQ-V1-S2w"/>
                         <outlet property="addPostButton" destination="fRp-mP-cp0" id="syX-s7-w3V"/>
+                        <outlet property="imageView" destination="r3N-OX-0M7" id="KPl-US-sXv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iRB-Bq-TiN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2103" y="910"/>
+            <point key="canvasLocation" x="2101.5999999999999" y="909.89505247376314"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="R9G-LI-1rP">

@@ -54,7 +54,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
-        self.navigationController?.isNavigationBarHidden = false
     }
     
     
