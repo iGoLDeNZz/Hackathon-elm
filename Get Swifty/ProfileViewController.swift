@@ -7,12 +7,19 @@
 //
 
 import UIKit
+import Alamofire
+
 
 class ProfileViewController: UIViewController {
 
-    
+    @IBOutlet weak var profileName: UITextField!
+    @IBOutlet weak var profileDescription: UITextView!
+    @IBOutlet weak var profilePhone: UITextField!
+    @IBOutlet weak var profileEmail: UITextField!
+    @IBOutlet weak var profileTags: UITextField!
     @IBOutlet weak var profileImage: UIImageView!
     
+    var user_id : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +29,66 @@ class ProfileViewController: UIViewController {
         profileImage.layer.cornerRadius = 55
         profileImage.clipsToBounds = true
         
+        
+        findUserDetails()
     }
-
+    
+    func findUserDetails(){
+        let defaults = UserDefaults.standard
+        let token = defaults.string(forKey: "token")
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(token!)",
+            "Accept-Language" : "ar"
+        ]
+        
+        let URL = "https://elmhackhub.com/api/v1/users/\(user_id)"
+        
+        let encodedUrl = URL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        print(encodedUrl!)
+        
+        Alamofire.request(encodedUrl!, headers: headers)
+            .responseJSON { (response:DataResponse<Any>) in
+            
+            switch response.result{
+            case .success:
+                if let JSON = response.result.value as? [String:Any]{
+                    // print(JSON)
+                    print(JSON)
+                    self.fillUpUserDetails(json: JSON)
+                    
+                    
+                }
+            case .failure(let error):
+                print(error)
+            }
+            
+        }
+        
+    }
+    
+    func fillUpUserDetails(json : [String : Any]){
+        
+        profileEmail.text = (json["email"] as! String)
+        profileName.text = (json["full_name"] as! String)
+        profileDescription.text = "وصف شخصي للملف"
+        profileTags.text = "رياضة، علم، صحة، قهوة"
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func cancelButtonPressed(_ sender: Any) {
+        if let navController = self.navigationController {
+            navController.popViewController(animated: true)
+        }
+    }
+    
+    @IBAction func editButtonPressed(_ sender: Any) {
+        
+    }
     /*
     // MARK: - Navigation
 

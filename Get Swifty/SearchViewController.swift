@@ -35,6 +35,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, CLLocationMan
             locationManager.startUpdatingLocation()
         }
         
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -42,6 +43,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, CLLocationMan
         // Dispose of any resources that can be recreated.
         
     }
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true);
@@ -98,6 +100,12 @@ class SearchViewController: UIViewController, UITextFieldDelegate, CLLocationMan
             posts.posts = postsArr
             
             
+        }
+        
+        if let profile = segue.destination as? ProfileViewController {
+            let defaults = UserDefaults.standard
+            let user_id = defaults.string(forKey: "user_id")
+            profile.user_id = user_id!
         }
     }
     

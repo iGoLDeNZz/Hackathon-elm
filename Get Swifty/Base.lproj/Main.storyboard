@@ -14,9 +14,8 @@
         <!--Navigation Controller-->
         <scene sceneID="aVf-BS-03a">
             <objects>
-                <navigationController id="Y9i-Vt-bZN" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="POi-lo-ntj">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                <navigationController navigationBarHidden="YES" id="Y9i-Vt-bZN" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="POi-lo-ntj">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -96,6 +95,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="ySz-hR-K5F"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="mobilePhoneTextField" destination="HBn-iV-DlN" id="SaA-f0-bO8"/>
                         <segue destination="6jG-cW-0y2" kind="show" identifier="OTPView" id="Eu3-Js-YOI"/>
@@ -192,7 +192,7 @@
         <!--Search View Controller-->
         <scene sceneID="4cy-Ws-NSu">
             <objects>
-                <viewController id="kDi-BQ-3Qe" customClass="SearchViewController" customModule="Get_Swifty" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overFullScreen" id="kDi-BQ-3Qe" customClass="SearchViewController" customModule="Get_Swifty" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DpC-I0-KsQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -217,7 +217,7 @@
                                         </constraints>
                                         <state key="normal" title="profile" image="profile"/>
                                         <connections>
-                                            <segue destination="dlg-Ut-4xb" kind="show" id="AFz-Hm-Brk"/>
+                                            <segue destination="dlg-Ut-4xb" kind="show" id="nZu-Kf-rb5"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SearchAr1" translatesAutoresizingMaskIntoConstraints="NO" id="reZ-Gc-OaJ">
@@ -302,6 +302,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wHw-KE-QFJ"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="SearchTextField" destination="neh-4n-pZw" id="wX2-zi-13i"/>
                         <segue destination="L0U-Cl-Pyq" kind="show" identifier="toPosts" id="C6e-bl-jyx"/>
@@ -309,7 +311,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gMW-mm-mHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1212" y="134"/>
+            <point key="canvasLocation" x="1212" y="152"/>
         </scene>
         <!--Posts View Controller-->
         <scene sceneID="q89-JZ-AW0">
@@ -477,6 +479,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iGF-IU-VGr"/>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="kPL-iy-Xiw" id="LCu-fa-pIO"/>
                     </connections>
@@ -513,6 +516,9 @@
                                         <state key="normal" title="إضافة">
                                             <color key="titleColor" red="0.22745098039215686" green="0.49803921568627452" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="addPostButtonPressed:" destination="fyX-qF-1sO" eventType="touchUpInside" id="pCa-Ll-eWX"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Nt-nL-c9B">
                                         <rect key="frame" x="307" y="46" width="60" height="30"/>
@@ -616,7 +622,7 @@
         <!--Profile View Controller-->
         <scene sceneID="R9G-LI-1rP">
             <objects>
-                <viewController id="dlg-Ut-4xb" customClass="ProfileViewController" customModule="Get_Swifty" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dlg-Ut-4xb" customClass="ProfileViewController" customModule="Get_Swifty" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AUS-yt-wPU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -673,8 +679,8 @@
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="+966542555221" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fJj-Ee-zyf">
-                                        <rect key="frame" x="175" y="226" width="159" height="24"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="+966555555551" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fJj-Ee-zyf">
+                                        <rect key="frame" x="174" y="226" width="160" height="24"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -737,12 +743,28 @@
                                             <constraint firstAttribute="width" constant="40" id="tsb-cZ-Q5V"/>
                                         </constraints>
                                         <state key="normal" title="edit" image="pencil"/>
+                                        <connections>
+                                            <action selector="editButtonPressed:" destination="dlg-Ut-4xb" eventType="touchUpInside" id="3cI-KE-1hq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGt-sY-iBq">
+                                        <rect key="frame" x="273" y="-24" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="Qhs-QD-YYp"/>
+                                            <constraint firstAttribute="height" constant="40" id="vfr-TH-sk3"/>
+                                        </constraints>
+                                        <state key="normal" title="cancel" image="cancel"/>
+                                        <connections>
+                                            <action selector="cancelButtonPressed:" destination="dlg-Ut-4xb" eventType="touchUpInside" id="g2h-0e-moe"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.33725490196078434" green="0.56470588235294117" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="28w-RF-ykQ" secondAttribute="trailing" constant="41" id="Blz-P0-Xzh"/>
+                                    <constraint firstItem="mi8-LE-Lfp" firstAttribute="leading" secondItem="RLo-7T-MtM" secondAttribute="trailing" constant="38" id="Bpa-xi-dbg"/>
                                     <constraint firstAttribute="trailing" secondItem="IiB-UW-113" secondAttribute="trailing" constant="41" id="MUL-cr-XLN"/>
+                                    <constraint firstItem="aGt-sY-iBq" firstAttribute="leading" secondItem="mi8-LE-Lfp" secondAttribute="trailing" constant="38" id="MgY-lq-fwK"/>
                                     <constraint firstAttribute="trailing" secondItem="aqE-9r-ROy" secondAttribute="trailing" constant="13" id="PnP-Ae-cNm"/>
                                     <constraint firstItem="I0N-ip-8Kj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ArG-Wh-gLE" secondAttribute="leading" constant="83" id="SHe-hx-x9d"/>
                                     <constraint firstItem="fJj-Ee-zyf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ArG-Wh-gLE" secondAttribute="leading" constant="83" id="cRS-xm-VPh"/>
@@ -766,7 +788,6 @@
                             <constraint firstItem="bAx-3k-IYz" firstAttribute="top" secondItem="MGN-oh-8xC" secondAttribute="bottom" constant="130" id="Edf-xU-HW1"/>
                             <constraint firstItem="w57-hY-aTZ" firstAttribute="top" secondItem="MGN-oh-8xC" secondAttribute="bottom" constant="196" id="FNA-iX-3fm"/>
                             <constraint firstItem="MGN-oh-8xC" firstAttribute="leading" secondItem="m4r-7O-lxQ" secondAttribute="leading" id="I5s-NL-b2N"/>
-                            <constraint firstItem="RLo-7T-MtM" firstAttribute="leading" secondItem="m4r-7O-lxQ" secondAttribute="leading" constant="54" id="Idb-W8-l6K"/>
                             <constraint firstItem="mJE-GW-XhD" firstAttribute="top" secondItem="MGN-oh-8xC" secondAttribute="bottom" constant="158" id="MMi-ee-NAt"/>
                             <constraint firstItem="m4r-7O-lxQ" firstAttribute="trailing" secondItem="fJj-Ee-zyf" secondAttribute="trailing" constant="41" id="QMI-Zx-hLN"/>
                             <constraint firstItem="O09-Vi-Vcg" firstAttribute="top" secondItem="MGN-oh-8xC" secondAttribute="bottom" constant="398" id="XIO-QE-mcn"/>
@@ -789,13 +810,19 @@
                             <constraint firstItem="m4r-7O-lxQ" firstAttribute="bottom" secondItem="ArG-Wh-gLE" secondAttribute="bottom" id="rSV-U2-qht"/>
                             <constraint firstItem="m4r-7O-lxQ" firstAttribute="trailing" secondItem="I0N-ip-8Kj" secondAttribute="trailing" constant="41" id="ssc-EZ-GKn"/>
                             <constraint firstItem="28w-RF-ykQ" firstAttribute="top" secondItem="MGN-oh-8xC" secondAttribute="bottom" constant="285" id="uxL-31-qlU"/>
+                            <constraint firstItem="aGt-sY-iBq" firstAttribute="top" secondItem="MGN-oh-8xC" secondAttribute="bottom" constant="-25" id="vNL-2u-oHs"/>
                             <constraint firstItem="m4r-7O-lxQ" firstAttribute="trailing" secondItem="MGN-oh-8xC" secondAttribute="trailing" id="xaT-Pm-0zh"/>
                             <constraint firstItem="aqE-9r-ROy" firstAttribute="top" secondItem="MGN-oh-8xC" secondAttribute="bottom" constant="287" id="xt8-PA-bh7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="m4r-7O-lxQ"/>
                     </view>
                     <connections>
-                        <outlet property="profileImage" destination="mi8-LE-Lfp" id="6Lp-Yn-9wZ"/>
+                        <outlet property="profileDescription" destination="28w-RF-ykQ" id="Qxf-f3-MXY"/>
+                        <outlet property="profileEmail" destination="FX2-FX-cnd" id="M3g-RK-hpd"/>
+                        <outlet property="profileImage" destination="mi8-LE-Lfp" id="Svu-eZ-2Ee"/>
+                        <outlet property="profileName" destination="I0N-ip-8Kj" id="4b4-ni-XjT"/>
+                        <outlet property="profilePhone" destination="fJj-Ee-zyf" id="Eml-im-keb"/>
+                        <outlet property="profileTags" destination="IiB-UW-113" id="LzG-jc-e10"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dkb-D6-SZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -807,6 +834,7 @@
         <image name="SearchAr1" width="355" height="65"/>
         <image name="SearchButton1" width="355" height="65"/>
         <image name="background" width="375" height="812"/>
+        <image name="cancel" width="512" height="512"/>
         <image name="edit" width="512" height="512"/>
         <image name="notifications" width="246" height="288"/>
         <image name="pencil" width="512" height="512"/>
@@ -815,7 +843,7 @@
         <image name="profile_pic" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="AFz-Hm-Brk"/>
+        <segue reference="nZu-Kf-rb5"/>
         <segue reference="wSe-oo-rHv"/>
     </inferredMetricsTieBreakers>
 </document>

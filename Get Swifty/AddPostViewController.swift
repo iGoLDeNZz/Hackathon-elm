@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class AddPostViewController: UIViewController {
 
@@ -57,10 +58,63 @@ class AddPostViewController: UIViewController {
         
     }
 
+    @IBAction func addPostButtonPressed(_ sender: Any) {
+        addPost()
+        if let navController = self.navigationController {
+            navController.popViewController(animated: true)
+        }
+    }
+    
+    func addPost(){
+        //get user token and location from the local storage
+        let defaults = UserDefaults.standard
+        let token = defaults.string(forKey: "token")
+        let latitude = defaults.double(forKey: "latitude")
+        let longitude = defaults.double(forKey: "longitude")
+        //prepare the headers
+        
+        let headers: HTTPHeaders = [
+            "Authorization": "bearer \(token!)",
+            "Content-Type": "application/json"
+        ];
+        
+        let metaData: [String: Any] = ["title": TitleTextField.text!, "description": DescriptionTextField.text!]
+        
+        
+        let params:  [String : Any] =   ["latitude": latitude , "longitude": longitude ,
+                                         "metadata_key": "partner_\(TagsTextField.text ?? "swift")",  "metadata": metaData]
+        
+        let URL = "https://elmhackhub.com/api/v1/posts";
+        let encodedUrl = URL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        
+        
+        Alamofire.request(encodedUrl!, method: .post, parameters:params, encoding: JSONEncoding.default, headers: headers).responseJSON{
+            response in
+            switch response.result{
+            case .success:
+                print("in success")
+                if let JSON = response.result.value {
+                    print("heey")
+                    print(JSON);
+                    debugPrint(params)
+                }
+                
+            case .failure(let error):
+                print("in failure")
+                //print(error)
+                //debugPrint(response)
+                print(params)
+                print(headers)
+                
+            }
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
     /*
     // MARK: - Navigation
