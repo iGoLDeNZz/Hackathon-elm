@@ -20,6 +20,8 @@ class PostViewController: UIViewController {
     var latitude : Double = 0.0
     var longitude : Double = 0.0
     var query : String = ""
+    var posts : [post] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,15 +30,15 @@ class PostViewController: UIViewController {
         long.text = "longitude: \(longitude)"
         quer.text = "Query: \(query)"
         
-        let url : String = "https://elmhackhub.com/api/v1/posts?latitude=\(latitude)&longitude=\(longitude)&status_id=0&radius_km=5&metadata_key=Pup_\(query)"
+        let url : String = "https://elmhackhub.com/api/v1/posts?latitude=\(latitude)&longitude=\(longitude)&status_id=0&radius_km=15&metadata_key=partner_\(query)"
 
         let defaults = UserDefaults.standard
         let token = defaults.string(forKey: "token")
-        print("token \(token)")
+        print("token \(token!)")
         //prepare the headers
         let headers: HTTPHeaders = [
-            "Authorization": "Bearer \(token)",
-            "Content-Type": "application/json"
+            "Authorization": "Bearer \(token!)",
+            "Accept-Language" : "ar"
         ]
         
         getPosts(URL: url, headers: headers)
@@ -50,20 +52,38 @@ class PostViewController: UIViewController {
     
     
     func getPosts(URL : String, headers : HTTPHeaders){
-        
-        Alamofire.request(URL , method: .get, headers: headers).validate().responseJSON{
-            response in
+        let encodedUrl = URL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        print(encodedUrl!)
 
-            switch response.result{
-            case .success:
+
+        
+        Alamofire.request(encodedUrl!, method: .get, headers: headers)
+            .responseJSON { (response:DataResponse<Any>) in
                 
-                if let JSON = response.result.value as? [String:Any]{
-                    print(JSON);
+                let data = response.data
+                let jsonvalues = try? JSON(data: data!)
+                
+                var posts = jsonvalues!
+                
+                for var i in 0..<posts.count{
+                    let title = posts[i]["metadata"]["title"].stringValue
+                    let post_Id = posts[i]["post_id"].stringValue
+                    let user = posts[i]["user"]
+                    let user_id = user["user_id"].stringValue
+                    let description = posts[i]["metadata"]["description"].stringValue
+                    let name = posts[i]["user"]["full_name"].stringValue
+                    let status = posts[i]["status_id"].intValue
+                    
+                    let newPost = post(u: user_id, p: post_Id, t: title, d: description, n: name, s: status)
+                    self.posts.append(newPost)
+                    print(self.posts.count)
+                }
+                print(self.posts.count)
+                for post in self.posts {
+                    print(post.user_id)
                 }
                 
-            case .failure(let error):
-                print(error)
-            }
+    
         }
     }
     
@@ -77,5 +97,7 @@ class PostViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
 
 }
