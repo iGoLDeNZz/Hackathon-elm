@@ -52,21 +52,15 @@ class ViewController: UIViewController {
         Alamofire.request("https://elmhackhub.com/api/v1/users", method: .post, parameters: phoneNumber).validate().responseJSON{
         response in
             
-            print("in func login")
             switch response.result{
                 case .success:
-                   
                     if let JSON = response.result.value as? [String:Any]{
                         print(JSON);
                         let res = JSON["success"]!
-                        print(res)
                         self.performSegue(withIdentifier: "OTPView", sender: self)
                 }
-                
                 case .failure(let error):
                     print(error)
-
-                
             }
           
         }

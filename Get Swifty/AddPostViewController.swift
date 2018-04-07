@@ -22,35 +22,49 @@ class AddPostViewController: UIViewController {
     }
     
     @IBAction func buttonPressed(_ sender: Any) {
-        
+        addPost()
     }
     
     func addPost(){
-        //get user token from the local storage
+        //get user token and location from the local storage
         let defaults = UserDefaults.standard
-        let token = defaults.string(forKey: "access_token")
-        
+        let token = defaults.string(forKey: "token")
+        let latitude = defaults.double(forKey: "latitude")
+        let longitude = defaults.double(forKey: "longitude")
         //prepare the headers
+        
         let headers: HTTPHeaders = [
-            "Authorization": "Bearer \(token ?? "")",
+            "Authorization": "bearer \(token!)",
             "Content-Type": "application/json"
         ];
         
+        let metaData: [String: Any] = ["title": postTitle.text!, "description": Description.text!]
+
         
-        // let params: [String : Any] =  ["latitude": 46.668108, "longitude": 24.75608, "metadata_key": "Pup_\(keyword.text ?? "swift")"]
-        let param : [String : String] = ["mobile":"+966" , "code" : "123"]
+        let params:  [String : Any] =   ["latitude": latitude , "longitude": longitude ,
+                                         "metadata_key": "partner_\(keyword.text ?? "swift")",  "metadata": metaData]
         
-        Alamofire.request("https://elmhackhub.com/api/v1/posts", headers: headers, parameters: param, method: .post ).validate().responseJSON{
+        let URL = "https://elmhackhub.com/api/v1/posts";
+        let encodedUrl = URL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        
+        
+        Alamofire.request(encodedUrl!, method: .post, parameters:params, encoding: JSONEncoding.default, headers: headers).responseJSON{
             response in
             switch response.result{
             case .success:
-                
-                if let JSON = response.result.value as? [String:Any]{
+                print("in success")
+                if let JSON = response.result.value {
+                    print("heey")
                     print(JSON);
+                    debugPrint(params)
                 }
                 
             case .failure(let error):
-                print(error)
+                print("in failure")
+                //print(error)
+                //debugPrint(response)
+                print(params)
+                print(headers)
                 
             }
         }
@@ -72,5 +86,3 @@ class AddPostViewController: UIViewController {
      */
     
 }
-
-

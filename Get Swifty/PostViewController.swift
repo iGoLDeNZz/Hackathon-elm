@@ -87,17 +87,22 @@ class PostViewController: UIViewController {
         }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        //DONT FORGET TO PASS USER ID THAT OWNS THE PICTURE TO BE ABLE TO LOAD HIS PICTURE
+        
+        performSegue(withIdentifier: "toUserProfile", sender: self)
+    
     }
-    */
-    
-    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let userProfile = segue.destination as? ProfileViewController {
+           // userProfile.user_id = (String)sender.tag as UIButton
+            //UP THERE YOU SHOULD CHANGE THE USER ID ATTRIBUTE FOR THE USERPROFILE VIEW
+        }
+        
+    }
 
 }
