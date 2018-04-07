@@ -27,7 +27,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate, CLLocationMan
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        self.navigationController?.isNavigationBarHidden = true
+
         locationManager.requestAlwaysAuthorization()
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
@@ -52,8 +53,18 @@ class SearchViewController: UIViewController, UITextFieldDelegate, CLLocationMan
 
     @IBAction func SearchButtonPressed(_ sender: Any) {
         SearchTextField.resignFirstResponder()
+        if SearchTextField.text == "" {
+            return
+        }
         savecoordinates()
-        performSegue(withIdentifier: "toPosts", sender: self)
+        let defaults = UserDefaults.standard
+        let token = defaults.string(forKey: "token")
+         let url : String = "https://elmhackhub.com/api/v1/posts?latitude=\(latitude)&longitude=\(longitude)&status_id=0&radius_km=15&metadata_key=partner_\(SearchTextField.text!)"
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(token!)",
+            "Accept-Language" : "ar"
+        ]
+        getPosts(URL: url, headers: headers)
         
     }
     
@@ -80,24 +91,29 @@ class SearchViewController: UIViewController, UITextFieldDelegate, CLLocationMan
         
         if let posts = segue.destination as? PostsViewController {
             
-            let url : String = "https://elmhackhub.com/api/v1/posts?latitude=\(latitude)&longitude=\(longitude)&status_id=0&radius_km=15&metadata_key=partner_\(SearchTextField.text!)"
+
             
-            let defaults = UserDefaults.standard
-            let token = defaults.string(forKey: "token")
-            print("token \(token!)")
+
+          //  print("token \(token!)")
             //prepare the headers
-            let headers: HTTPHeaders = [
-                "Authorization": "Bearer \(token!)",
-                "Accept-Language" : "ar"
-            ]
+
             
-            getPosts(URL: url, headers: headers)
             posts.latitude = latitude
             posts.longitude = longitude
             posts.query = SearchTextField.text!
-            let newPost = post(u: "286742378", p: "872647368", t: "rayan", d: "rayan rayan", n: "rayan", s: 1, tt: "Swift")
-            self.postsArr.append(newPost)
-            posts.posts = postsArr
+//            let newPost = post(u: "286742378", p: "872647368", t: "rayan", d: "rayan rayan", n: "rayan", s: 1, tt: "Swift")
+//            self.postsArr.append(newPost)
+
+            posts.posts = self.postsArr
+                
+            
+            
+           
+            print("im here")
+            print(self.postsArr.count)
+
+           // debugPrint(x)
+            
             
             
         }
@@ -111,10 +127,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, CLLocationMan
     
     func getPosts(URL : String, headers : HTTPHeaders){
         let encodedUrl = URL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-        print(encodedUrl!)
-        
-        
-        
+
         Alamofire.request(encodedUrl!, method: .get, headers: headers)
             .responseJSON { (response:DataResponse<Any>) in
                 
@@ -122,8 +135,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate, CLLocationMan
                 let jsonvalues = try? JSON(data: data!)
                 
                 var posts = jsonvalues!
-                print ("posts: \(posts)")
-                
+              //  print ("posts: \(posts)")
+                self.postsArr = []
                 for var i in 0..<posts.count{
                     let title = posts[i]["metadata"]["title"].stringValue
                     let post_Id = posts[i]["post_id"].stringValue
@@ -134,16 +147,24 @@ class SearchViewController: UIViewController, UITextFieldDelegate, CLLocationMan
                     let status = posts[i]["status_id"].intValue
                     
                     let newPost = post(u: user_id, p: post_Id, t: title, d: description, n: name, s: status)
+                    //print("new post \(newPost)")
                     self.postsArr.append(newPost)
-                    print(self.postsArr.count)
+                    //print(self.postsArr[i])
+
+                    //print(postsArr.count)
                 }
-                print(self.postsArr.count)
-                for post in self.postsArr {
-                    print(post.user_id)
-                }
-                
-                
+//                print(postsArr.count)
+//                for post in self.postsArr {
+//                    print(post.user_id)
+//                }
         }
+        print("in get posts")
+//        debugPrint(self.postsArr)
+        print(self.postsArr.count)
+        if self.postsArr.count > 1 {
+            performSegue(withIdentifier: "toPosts", sender: self)
+        }
+
     }
 
 

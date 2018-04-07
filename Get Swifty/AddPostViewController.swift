@@ -9,19 +9,29 @@
 import UIKit
 import Alamofire
 
-class AddPostViewController: UIViewController {
+class AddPostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var TitleTextField: UITextField!
     @IBOutlet weak var TagsTextField: UITextField!
     @IBOutlet weak var DescriptionTextField: UITextField!
-    
     @IBOutlet weak var addPostButton: UIButton!
+    
+    @IBOutlet weak var imageView: UIImageView!
+    var image:UIImage?
+    var info: [String : Any] = [:]
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let controller = UIImagePickerController()
+        controller.delegate = self
+        controller.sourceType = .photoLibrary
+        present(controller, animated: true, completion: nil)
+
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
         // addPostButton border radius
         addPostButton.layer.cornerRadius = 3
         addPostButton.clipsToBounds = true
@@ -58,6 +68,7 @@ class AddPostViewController: UIViewController {
         
     }
 
+<<<<<<< HEAD
     @IBAction func addPostButtonPressed(_ sender: Any) {
         addPost()
         if let navController = self.navigationController {
@@ -109,6 +120,10 @@ class AddPostViewController: UIViewController {
             }
         }
     }
+||||||| merged common ancestors
+=======
+    
+>>>>>>> 68ac0a960b2ed898fe39b3edf989d4fb55c924da
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -125,7 +140,144 @@ class AddPostViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func buttonPressed(_ sender: Any) {
+        addPost()
+    }
+    func addPost(){
+        //get user token from the local storage
+        let defaults = UserDefaults.standard
+        let token = defaults.string(forKey: "token")
+        //prepare the headers
+        let headers: HTTPHeaders = [
+            "Authorization": "bearer \(token!)",
+            "Content-Type": "application/json"
+        ];
+        
+        let metaData: [String: Any] = ["title": TitleTextField.text!, "description": DescriptionTextField.text!]
+        
+        
+        
+        //        let params: [String : Any] =  ["latitude": 24.75608, "longitude": 46.668108, "description": "5:00 pm",
+        //                                       "metadata_key": "partner_\(keyword.text ?? "swift")"]
+        let latitude = 24.75608
+        let longitude = 46.668108
+        let params:  [String : Any] =   ["latitude": latitude , "longitude": longitude ,
+                                         "metadata_key": "partner_\(TagsTextField.text ?? "swift")",  "metadata": metaData]
+        
+        //let jsonObj = try? JSONSerialization.data(withJSONObject: params, options: [])
+        let URL = "https://elmhackhub.com/api/v1/posts";
+        let encodedUrl = URL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        var post_id = ""
+        Alamofire.request(encodedUrl!, method: .post, parameters:params, encoding: JSONEncoding.default, headers: headers).responseJSON{
+            response in
+            switch response.result{
+            case .success:
+                print("in success")
+                if let JSON = response.result.value {
+                    print("heey")
+                    let data = JSON as! [String: Any]
+                    post_id = data["post_id"] as! String
+                    
+                    if (self.image != nil) {
+                        self.uploadImage(post_id: post_id, token: token!)
+                    }
+                }
+                
+            case .failure(let error):
+                print("in failure")
+                print(error)
+                //debugPrint(response)
+//                print(params)
+//                print(headers)
+                
+            }
+        }
+    }
+    func uploadImage(post_id:String, token:String){
+        
+        let URL:String = "https://elmhackhub.com/api/v1/posts/\(post_id)"
+        let encodedUrl = URL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(token)"
+        ]
+        
+        let imageData = UIImagePNGRepresentation(self.image!)!
+        
+        Alamofire.upload(imageData, to: encodedUrl!, headers: headers).responseJSON { response in
+            debugPrint(response)
+        }
+        
+//        Alamofire.upload(
+//            multipartFormData: { MultipartFormData in
+//                if((self.image) != nil){
+//                    MultipartFormData.append(UIImageJPEGRepresentation(self.image!,  0.025)!, withName: "file", fileName: "imageNew.jpeg", mimeType: "image/jpeg")
+//                }
+//
+//        }, to: encodedUrl!, HTTPHeaders: headers) { (result) in
+//
+//            switch result {
+//            case .success(let upload, _, _):
+//
+//                upload.responseJSON { response in
+//                    // getting success
+//                    print(response)
+//                }
+//
+//            case .failure(let encodingError):
+//                // getting error
+//                print("fail")
+//                print(encodingError)
+//
+//                break
+//            }
+//
+//
+//        }
+//        if let data = UIImageJPEGRepresentation(self.image!,1) {
+//
+//            // You can change your image name here, i use NSURL image and convert into string
+//            let imageURL = self.info[UIImagePickerControllerPHAsset] as! NSURL
+//            let fileName = imageURL.absoluteString
+//            // Start Alamofire
+//            Alamofire.upload(imageData, to: "https://httpbin.org/post", ).responseJSON { response in
+//                debugPrint(response)
+//            }
+//
+//            Alamofire.upload(
+//                multipartFormData: { multipartFormData in
+//                for (key,value) in parameters {
+//                    multipartFormData.append((value as! String).data(using: .utf8)!, withName: key)
+//                }
+//                multipartFormData.append(data, withName: "avatar", fileName: fileName!,mimeType: "image/jpeg")
+//            },
+//                             usingTreshold: UInt64.init(),
+//                             to: "YourURL",
+//                             method: .put,
+//                             encodingCompletion: { encodingResult in
+//                                switch encodingResult {
+//                                case .success(let upload, _, _):
+//                                    upload.responJSON { response in
+//                                        debugPrint(response)
+//                                    }
+//                                case .failure(let encodingError):
+//                                    print(encodingError)
+//                                }
+//            })
+//        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        self.info = info
+        self.image = image
+        imageView.image = image
+        imageView.contentMode = .scaleAspectFill
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 extension UITextField {
