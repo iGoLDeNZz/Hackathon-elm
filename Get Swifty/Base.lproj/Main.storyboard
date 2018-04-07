@@ -14,18 +14,9 @@
         <!--Navigation Controller-->
         <scene sceneID="aVf-BS-03a">
             <objects>
-<<<<<<< HEAD
-                <navigationController navigationBarHidden="YES" id="Y9i-Vt-bZN" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="POi-lo-ntj">
-||||||| merged common ancestors
-                <navigationController id="Y9i-Vt-bZN" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="POi-lo-ntj">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-=======
                 <navigationController id="Y9i-Vt-bZN" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="POi-lo-ntj">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
->>>>>>> 68ac0a960b2ed898fe39b3edf989d4fb55c924da
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -210,14 +201,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7TI-Gs-vge">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3Z-Am-aAL">
+                                    <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3Z-Am-aAL">
                                         <rect key="frame" x="20" y="53" width="20" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="2fk-AF-8wb"/>
                                             <constraint firstAttribute="width" constant="20" id="5H3-mh-7hn"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="Hob-fi-phx"/>
                                         </constraints>
-                                        <state key="normal" title="notifications" image="notifications"/>
+                                        <state key="normal" title="notifications" image="home"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSg-Ka-GjL">
                                         <rect key="frame" x="331" y="53" width="30" height="30"/>
@@ -334,14 +325,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BiP-oK-YPS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TV-z2-Rcg">
-                                        <rect key="frame" x="20" y="53" width="20" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="20" id="14g-0Q-cka"/>
-                                            <constraint firstAttribute="height" constant="25" id="teu-7b-FDE"/>
-                                        </constraints>
-                                        <state key="normal" title="notifications" image="notifications"/>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjD-ZS-dbK">
                                         <rect key="frame" x="331" y="53" width="30" height="30"/>
                                         <constraints>
@@ -403,9 +386,9 @@
                                                                     <rect key="frame" x="220" y="260" width="60" height="30"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="برمجة" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mtr-aL-ete">
-                                                                            <rect key="frame" x="9.5" y="4" width="42.5" height="21.5"/>
+                                                                            <rect key="frame" x="8" y="4" width="43" height="22"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <color key="textColor" red="0.2506332784739847" green="0.24942248968908626" blue="0.2518440672588832" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             <color key="highlightedColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <userDefinedRuntimeAttributes>
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -414,12 +397,12 @@
                                                                             </userDefinedRuntimeAttributes>
                                                                         </label>
                                                                     </subviews>
-                                                                    <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="0.52753103595890416" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
+                                                                        <constraint firstItem="Mtr-aL-ete" firstAttribute="centerX" secondItem="npx-dR-ZPh" secondAttribute="centerX" id="5Z8-Ce-FCm"/>
                                                                         <constraint firstAttribute="width" constant="60" id="Icr-y2-Pya"/>
                                                                         <constraint firstAttribute="height" constant="30" id="RWE-tp-8xE"/>
-                                                                        <constraint firstItem="Mtr-aL-ete" firstAttribute="centerY" secondItem="npx-dR-ZPh" secondAttribute="centerY" id="dY5-Gn-5TM"/>
-                                                                        <constraint firstItem="Mtr-aL-ete" firstAttribute="centerX" secondItem="npx-dR-ZPh" secondAttribute="centerX" id="moI-oU-ak8"/>
+                                                                        <constraint firstItem="Mtr-aL-ete" firstAttribute="centerY" secondItem="npx-dR-ZPh" secondAttribute="centerY" id="uOh-aT-y5a"/>
                                                                     </constraints>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -466,6 +449,17 @@
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TV-z2-Rcg">
+                                        <rect key="frame" x="20" y="53" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="14g-0Q-cka"/>
+                                            <constraint firstAttribute="height" constant="30" id="teu-7b-FDE"/>
+                                        </constraints>
+                                        <state key="normal" title="notifications" image="home"/>
+                                        <connections>
+                                            <action selector="homeButtonPressed:" destination="L0U-Cl-Pyq" eventType="touchUpInside" id="0Ms-1I-4rF"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -496,7 +490,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xs6-L7-Mgv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="966" y="910"/>
+            <point key="canvasLocation" x="965.60000000000002" y="909.89505247376314"/>
         </scene>
         <!--Add Post View Controller-->
         <scene sceneID="1H4-g5-9rt">
@@ -537,6 +531,9 @@
                                         <state key="normal" title="إلغاء">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="CancelPressed:" destination="fyX-qF-1sO" eventType="touchUpInside" id="94f-BF-nDf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.22745098039215686" green="0.49803921568627452" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -581,14 +578,6 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7W-E0-BDe">
-                                <rect key="frame" x="163" y="474" width="49" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Submit"/>
-                                <connections>
-                                    <action selector="buttonPressed:" destination="fyX-qF-1sO" eventType="touchUpInside" id="rGW-Ed-ZaI"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -719,35 +708,35 @@
                                             <constraint firstAttribute="width" constant="110" id="YNR-zk-bBH"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit" translatesAutoresizingMaskIntoConstraints="NO" id="PKJ-Q2-0Yi">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit" translatesAutoresizingMaskIntoConstraints="NO" id="PKJ-Q2-0Yi">
                                         <rect key="frame" x="342" y="94" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="1Bm-Od-D7u"/>
                                             <constraint firstAttribute="width" constant="20" id="mE9-pK-Frx"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit" translatesAutoresizingMaskIntoConstraints="NO" id="mJE-GW-XhD">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit" translatesAutoresizingMaskIntoConstraints="NO" id="mJE-GW-XhD">
                                         <rect key="frame" x="342" y="159" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="PCm-cV-EMy"/>
                                             <constraint firstAttribute="height" constant="20" id="d3e-Ac-Tw6"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit" translatesAutoresizingMaskIntoConstraints="NO" id="O09-Vi-Vcg">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit" translatesAutoresizingMaskIntoConstraints="NO" id="O09-Vi-Vcg">
                                         <rect key="frame" x="342" y="399" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="Zzt-3f-QCC"/>
                                             <constraint firstAttribute="height" constant="20" id="k22-g8-TvO"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit" translatesAutoresizingMaskIntoConstraints="NO" id="aqE-9r-ROy">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit" translatesAutoresizingMaskIntoConstraints="NO" id="aqE-9r-ROy">
                                         <rect key="frame" x="342" y="288" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="MF9-vr-enr"/>
                                             <constraint firstAttribute="width" constant="20" id="fx6-73-jjq"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLo-7T-MtM">
+                                    <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLo-7T-MtM">
                                         <rect key="frame" x="54" y="-24" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="4hc-1R-Gor"/>
@@ -847,7 +836,7 @@
         <image name="background" width="375" height="812"/>
         <image name="cancel" width="512" height="512"/>
         <image name="edit" width="512" height="512"/>
-        <image name="notifications" width="246" height="288"/>
+        <image name="home" width="512" height="462"/>
         <image name="pencil" width="512" height="512"/>
         <image name="photos" width="133" height="111"/>
         <image name="profile" width="285" height="285"/>

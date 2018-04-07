@@ -17,6 +17,7 @@ class post{
     var name : String
     var status : Int
     var tag : String?
+    var image : String?
     
     init (u: String, p: String, t: String, d: String, n:String, s:Int) {
         user_id = u
@@ -27,7 +28,7 @@ class post{
         status = s
     }
     
-    init(u: String, p: String, t: String, d: String, n:String, s:Int, tt: String) {
+    init(u: String, p: String, t: String, d: String, n:String, s:Int, tt: String, im: String) {
         user_id = u
         post_id = p
         title = t
@@ -35,6 +36,7 @@ class post{
         name = n
         status = s
         tag = tt
+        image = im
     }
     
     

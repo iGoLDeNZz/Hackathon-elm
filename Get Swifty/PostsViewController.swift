@@ -27,7 +27,7 @@ class PostsViewController: UIViewController, UITableViewDataSource, UITableViewD
 
         // Do any additional setup after loading the view.
         
-        tableView.separatorColor = UIColor(white: 0.95, alpha: 1)
+        tableView.separatorColor = UIColor(white: 1, alpha: 1)
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -90,22 +90,6 @@ class PostsViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     
     
-    @IBAction func buttonPressed(_ sender: UIButton) {
-        //DONT FORGET TO PASS USER ID THAT OWNS THE PICTURE TO BE ABLE TO LOAD HIS PICTURE
-        
-        performSegue(withIdentifier: "toUserProfile", sender: self)
-        
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if let userProfile = segue.destination as? ProfileViewController {
-            // userProfile.user_id = (String)sender.tag as UIButton
-            //UP THERE YOU SHOULD CHANGE THE USER ID ATTRIBUTE FOR THE USERPROFILE VIEW
-        }
-
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(posts)
         return posts.count
@@ -120,15 +104,24 @@ class PostsViewController: UIViewController, UITableViewDataSource, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PostTableViewCell
         cell.postTitleLabel.text = posts[indexPath.row].title
         cell.postDescriptionTextView.text = posts[indexPath.row].description
-        cell.postTagLabel.text = posts[indexPath.row].tag
+        cell.postTagLabel.text = posts[indexPath.row].tag ?? "swift"
+        cell.postImage.downloadedFrom(link: posts[indexPath.row].image!)
         
         print(posts[indexPath.row].title)
         print(cell.postTitleLabel.text)
-        cell.contentView.backgroundColor = UIColor(white: 0.95, alpha: 1)
+        cell.contentView.backgroundColor = UIColor(white: 1, alpha: 1)
         cell.selectionStyle = .none
         
         return cell
     }
+    @IBAction func homeButtonPressed(_ sender: Any) {
+        if let navController = self.navigationController {
+            navController.popViewController(animated: true)
+            self.posts.removeAll()
+            tableView.reloadData()
+        }
+    }
+    
     
 }
 

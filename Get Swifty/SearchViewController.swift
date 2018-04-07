@@ -145,6 +145,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, CLLocationMan
                     let description = posts[i]["metadata"]["description"].stringValue
                     let name = posts[i]["user"]["full_name"].stringValue
                     let status = posts[i]["status_id"].intValue
+                    let image = posts[i]["post_image"].stringValue
                     
                     let newPost = post(u: user_id, p: post_Id, t: title, d: description, n: name, s: status)
                     //print("new post \(newPost)")
