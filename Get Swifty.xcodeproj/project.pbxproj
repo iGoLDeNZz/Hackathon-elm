@@ -7,14 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1478D3F2077DDE900E51624 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1478D3E2077DDE900E51624 /* OTPViewController.swift */; };
+		A1478D412077EB0900E51624 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1478D402077EB0900E51624 /* SearchViewController.swift */; };
+		A1478D472078232C00E51624 /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1478D462078232C00E51624 /* AddPostViewController.swift */; };
+		A1478D4920783DED00E51624 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1478D4820783DED00E51624 /* ProfileViewController.swift */; };
+		A1478D4B2078590200E51624 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1478D4A2078590200E51624 /* PostsViewController.swift */; };
+		A1478D4D20785AB700E51624 /* DesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1478D4C20785AB700E51624 /* DesignView.swift */; };
+		A1478D4F20787B0800E51624 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1478D4E20787B0800E51624 /* Post.swift */; };
+		A1478D5120788A8700E51624 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1478D5020788A8700E51624 /* PostTableViewCell.swift */; };
 		DFDC13012077A68200624F0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC13002077A68200624F0F /* AppDelegate.swift */; };
 		DFDC13032077A68200624F0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC13022077A68200624F0F /* ViewController.swift */; };
 		DFDC13062077A68200624F0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFDC13042077A68200624F0F /* Main.storyboard */; };
 		DFDC13082077A68200624F0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFDC13072077A68200624F0F /* Assets.xcassets */; };
 		DFDC130B2077A68200624F0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFDC13092077A68200624F0F /* LaunchScreen.storyboard */; };
+		EA216DE4369D5A221D378398 /* Pods_Get_Swifty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86247AF7219D469D6DD1D772 /* Pods_Get_Swifty.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		333365E4769FF3E5B38D084C /* Pods-Get Swifty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get Swifty.release.xcconfig"; path = "Pods/Target Support Files/Pods-Get Swifty/Pods-Get Swifty.release.xcconfig"; sourceTree = "<group>"; };
+		6397A44966178F1E733E69D7 /* Pods-Get Swifty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get Swifty.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Get Swifty/Pods-Get Swifty.debug.xcconfig"; sourceTree = "<group>"; };
+		86247AF7219D469D6DD1D772 /* Pods_Get_Swifty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Get_Swifty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1478D3E2077DDE900E51624 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		A1478D402077EB0900E51624 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		A1478D462078232C00E51624 /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
+		A1478D4820783DED00E51624 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A1478D4A2078590200E51624 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		A1478D4C20785AB700E51624 /* DesignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignView.swift; sourceTree = "<group>"; };
+		A1478D4E20787B0800E51624 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		A1478D5020788A8700E51624 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		DFDC12FD2077A68200624F0F /* Get Swifty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Get Swifty.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFDC13002077A68200624F0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFDC13022077A68200624F0F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +49,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA216DE4369D5A221D378398 /* Pods_Get_Swifty.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		182DCA76EE251BE53A2400F2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6397A44966178F1E733E69D7 /* Pods-Get Swifty.debug.xcconfig */,
+				333365E4769FF3E5B38D084C /* Pods-Get Swifty.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A3BB8AAA785E0F01B0406E44 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				86247AF7219D469D6DD1D772 /* Pods_Get_Swifty.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DFDC12F42077A68200624F0F = {
 			isa = PBXGroup;
 			children = (
 				DFDC12FF2077A68200624F0F /* Get Swifty */,
 				DFDC12FE2077A68200624F0F /* Products */,
+				182DCA76EE251BE53A2400F2 /* Pods */,
+				A3BB8AAA785E0F01B0406E44 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,7 +96,15 @@
 			children = (
 				DFDC13002077A68200624F0F /* AppDelegate.swift */,
 				DFDC13022077A68200624F0F /* ViewController.swift */,
+				A1478D3E2077DDE900E51624 /* OTPViewController.swift */,
 				DFDC13042077A68200624F0F /* Main.storyboard */,
+				A1478D5020788A8700E51624 /* PostTableViewCell.swift */,
+				A1478D4A2078590200E51624 /* PostsViewController.swift */,
+				A1478D4E20787B0800E51624 /* Post.swift */,
+				A1478D4C20785AB700E51624 /* DesignView.swift */,
+				A1478D4820783DED00E51624 /* ProfileViewController.swift */,
+				A1478D462078232C00E51624 /* AddPostViewController.swift */,
+				A1478D402077EB0900E51624 /* SearchViewController.swift */,
 				DFDC13072077A68200624F0F /* Assets.xcassets */,
 				DFDC13092077A68200624F0F /* LaunchScreen.storyboard */,
 				DFDC130C2077A68200624F0F /* Info.plist */,
@@ -71,9 +119,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DFDC130F2077A68200624F0F /* Build configuration list for PBXNativeTarget "Get Swifty" */;
 			buildPhases = (
+				F8D578FAFE547B3F2AFDB8CD /* [CP] Check Pods Manifest.lock */,
 				DFDC12F92077A68200624F0F /* Sources */,
 				DFDC12FA2077A68200624F0F /* Frameworks */,
 				DFDC12FB2077A68200624F0F /* Resources */,
+				F68EDC5A3D27080FE2DC989B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,12 +181,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F68EDC5A3D27080FE2DC989B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Get Swifty/Pods-Get Swifty-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Get Swifty/Pods-Get Swifty-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8D578FAFE547B3F2AFDB8CD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Get Swifty-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DFDC12F92077A68200624F0F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1478D4D20785AB700E51624 /* DesignView.swift in Sources */,
+				A1478D4B2078590200E51624 /* PostsViewController.swift in Sources */,
+				A1478D4920783DED00E51624 /* ProfileViewController.swift in Sources */,
+				A1478D3F2077DDE900E51624 /* OTPViewController.swift in Sources */,
+				A1478D472078232C00E51624 /* AddPostViewController.swift in Sources */,
 				DFDC13032077A68200624F0F /* ViewController.swift in Sources */,
+				A1478D4F20787B0800E51624 /* Post.swift in Sources */,
+				A1478D5120788A8700E51624 /* PostTableViewCell.swift in Sources */,
+				A1478D412077EB0900E51624 /* SearchViewController.swift in Sources */,
 				DFDC13012077A68200624F0F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,14 +371,15 @@
 		};
 		DFDC13102077A68200624F0F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6397A44966178F1E733E69D7 /* Pods-Get Swifty.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P259NC53UQ;
+				DEVELOPMENT_TEAM = PYP6834DC2;
 				INFOPLIST_FILE = "Get Swifty/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "m.Get-Swifty.com";
+				PRODUCT_BUNDLE_IDENTIFIER = "m.Get--Swifty.com";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -288,14 +388,15 @@
 		};
 		DFDC13112077A68200624F0F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 333365E4769FF3E5B38D084C /* Pods-Get Swifty.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P259NC53UQ;
+				DEVELOPMENT_TEAM = PYP6834DC2;
 				INFOPLIST_FILE = "Get Swifty/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "m.Get-Swifty.com";
+				PRODUCT_BUNDLE_IDENTIFIER = "m.Get--Swifty.com";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

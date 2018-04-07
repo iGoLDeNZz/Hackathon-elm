@@ -1,0 +1,6 @@
+framework module Pods_Get_Swifty {
+  umbrella header "Pods-Get Swifty-umbrella.h"
+
+  export *
+  module * { export * }
+}
