@@ -2,7 +2,7 @@
 //  OTPViewController.swift
 //  Get Swifty
 //
-//  Created by Rayan Aldafas on 06/04/2018.
+//  Created by Yousef At-tamimi on 4/6/18.
 //  Copyright © 2018 Yousef At-tamimi. All rights reserved.
 //
 
