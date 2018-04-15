@@ -223,9 +223,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Get Swifty/Pods-Get Swifty-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-<<<<<<< HEAD
 		F8D578FAFE547B3F2AFDB8CD /* [CP] Check Pods Manifest.lock */ = {
-=======
 		79BF7463062D8514ECA81408 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			inputPaths = (
@@ -248,7 +246,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				A1478D4D20785AB700E51624 /* DesignView.swift in Sources */,
 				A1478D4B2078590200E51624 /* PostsViewController.swift in Sources */,
 				A1478D4920783DED00E51624 /* ProfileViewController.swift in Sources */,
@@ -258,12 +255,6 @@
 				A1478D4F20787B0800E51624 /* Post.swift in Sources */,
 				A1478D5120788A8700E51624 /* PostTableViewCell.swift in Sources */,
 				A1478D412077EB0900E51624 /* SearchViewController.swift in Sources */,
-=======
-				DF4971AD2077D44E00F2EDCB /* OTPViewController.swift in Sources */,
-				DFDC13032077A68200624F0F /* ViewController.swift in Sources */,
-				DF4971AF2077EEDA00F2EDCB /* SearchViewController.swift in Sources */,
-				DF3A37E3207840730036B319 /* post.swift in Sources */,
->>>>>>> 6473dcfefb252d1d76f40288ac5fcca37abb6ebf
 				DFDC13012077A68200624F0F /* AppDelegate.swift in Sources */,
 				DF4971B12077FF5000F2EDCB /* PostViewController.swift in Sources */,
 				DF3A37E720784A610036B319 /* ProfileViewController.swift in Sources */,
@@ -403,11 +394,8 @@
 		};
 		DFDC13102077A68200624F0F /* Debug */ = {
 			isa = XCBuildConfiguration;
-<<<<<<< HEAD
 			baseConfigurationReference = 6397A44966178F1E733E69D7 /* Pods-Get Swifty.debug.xcconfig */;
-=======
 			baseConfigurationReference = B0EBEC8E9776B3FD5AB89C6F /* Pods-Get Swifty.debug.xcconfig */;
->>>>>>> 6473dcfefb252d1d76f40288ac5fcca37abb6ebf
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -424,11 +412,8 @@
 		};
 		DFDC13112077A68200624F0F /* Release */ = {
 			isa = XCBuildConfiguration;
-<<<<<<< HEAD
 			baseConfigurationReference = 333365E4769FF3E5B38D084C /* Pods-Get Swifty.release.xcconfig */;
-=======
 			baseConfigurationReference = EC97FDD0B649A755A9137198 /* Pods-Get Swifty.release.xcconfig */;
->>>>>>> 6473dcfefb252d1d76f40288ac5fcca37abb6ebf
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
