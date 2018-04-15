@@ -56,7 +56,6 @@ class ViewController: UIViewController {
                 case .success:
                     if let JSON = response.result.value as? [String:Any]{
                         print(JSON);
-                        let res = JSON["success"]!
                         self.performSegue(withIdentifier: "OTPView", sender: self)
                 }
                 case .failure(let error):
