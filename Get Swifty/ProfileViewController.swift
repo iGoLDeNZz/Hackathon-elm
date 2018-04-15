@@ -2,7 +2,7 @@
 //  ProfileViewController.swift
 //  Get Swifty
 //
-//  Created by Yousef At-tamimi on 4/7/18.
+//  Created by Rayan Aldafas on 07/04/2018.
 //  Copyright © 2018 Yousef At-tamimi. All rights reserved.
 //
 

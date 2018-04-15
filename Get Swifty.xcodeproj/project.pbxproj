@@ -42,7 +42,6 @@
 		DFDC13072077A68200624F0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFDC130A2077A68200624F0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFDC130C2077A68200624F0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EC97FDD0B649A755A9137198 /* Pods-Get Swifty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get Swifty.release.xcconfig"; path = "Pods/Target Support Files/Pods-Get Swifty/Pods-Get Swifty.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				DFDC13002077A68200624F0F /* AppDelegate.swift */,
-				DF4971AC2077D44E00F2EDCB /* OTPViewController.swift */,
-				DF3A37E4207849570036B319 /* AddPostViewController.swift */,
 				DFDC13022077A68200624F0F /* ViewController.swift */,
 				A1478D3E2077DDE900E51624 /* OTPViewController.swift */,
 				DFDC13042077A68200624F0F /* Main.storyboard */,
@@ -111,26 +108,8 @@
 				DFDC13072077A68200624F0F /* Assets.xcassets */,
 				DFDC13092077A68200624F0F /* LaunchScreen.storyboard */,
 				DFDC130C2077A68200624F0F /* Info.plist */,
-				DF3A37E2207840730036B319 /* post.swift */,
 			);
 			path = "Get Swifty";
-			sourceTree = "<group>";
-		};
-		E5A52B31D56A2B1F53223E0C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1D5A618A2724A88078B01B63 /* Pods_Get_Swifty.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F8F4B366A7E9BEE1F49EFE59 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				B0EBEC8E9776B3FD5AB89C6F /* Pods-Get Swifty.debug.xcconfig */,
-				EC97FDD0B649A755A9137198 /* Pods-Get Swifty.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,8 +203,10 @@
 			showEnvVarsInLog = 0;
 		};
 		F8D578FAFE547B3F2AFDB8CD /* [CP] Check Pods Manifest.lock */ = {
-		79BF7463062D8514ECA81408 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
@@ -256,10 +237,6 @@
 				A1478D5120788A8700E51624 /* PostTableViewCell.swift in Sources */,
 				A1478D412077EB0900E51624 /* SearchViewController.swift in Sources */,
 				DFDC13012077A68200624F0F /* AppDelegate.swift in Sources */,
-				DF4971B12077FF5000F2EDCB /* PostViewController.swift in Sources */,
-				DF3A37E720784A610036B319 /* ProfileViewController.swift in Sources */,
-				DF3A37E5207849570036B319 /* AddPostViewController.swift in Sources */,
-				DF3A37E920785B910036B319 /* EditProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,7 +372,6 @@
 		DFDC13102077A68200624F0F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6397A44966178F1E733E69D7 /* Pods-Get Swifty.debug.xcconfig */;
-			baseConfigurationReference = B0EBEC8E9776B3FD5AB89C6F /* Pods-Get Swifty.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -413,7 +389,6 @@
 		DFDC13112077A68200624F0F /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 333365E4769FF3E5B38D084C /* Pods-Get Swifty.release.xcconfig */;
-			baseConfigurationReference = EC97FDD0B649A755A9137198 /* Pods-Get Swifty.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

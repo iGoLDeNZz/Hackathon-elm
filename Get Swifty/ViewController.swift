@@ -16,8 +16,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkIfUserAlreadyAuthed()
-        self.navigationController?.isNavigationBarHidden = true
         // Do any additional setup after loading the view, typically from a nib.
         
         mobilePhoneTextField.layer.borderColor = UIColor.white.cgColor

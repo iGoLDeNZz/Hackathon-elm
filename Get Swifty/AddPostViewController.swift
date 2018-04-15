@@ -2,7 +2,7 @@
 //  AddPostViewController.swift
 //  Get Swifty
 //
-//  Created by Yousef At-tamimi on 4/7/18.
+//  Created by Rayan Aldafas on 07/04/2018.
 //  Copyright © 2018 Yousef At-tamimi. All rights reserved.
 //
 
@@ -132,8 +132,6 @@ class AddPostViewController: UIViewController, UIImagePickerControllerDelegate, 
                     if (self.image != nil) {
                         self.uploadImage(post_id: post_id, token: token!)
                     }
-                    print(JSON);
-                    debugPrint(params)
                 }
                 
             case .failure(let error):
