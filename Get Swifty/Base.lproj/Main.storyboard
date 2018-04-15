@@ -358,7 +358,7 @@
                                                                         <constraint firstAttribute="height" constant="120" id="TGe-xa-WEp"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="profile_pic" translatesAutoresizingMaskIntoConstraints="NO" id="JTV-dD-xZX">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="profilepic" translatesAutoresizingMaskIntoConstraints="NO" id="JTV-dD-xZX">
                                                                     <rect key="frame" x="287" y="128" width="45" height="45"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="45" id="Cui-5a-QKM"/>
@@ -627,13 +627,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MGN-oh-8xC">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
-                                <color key="backgroundColor" red="0.2274509804" green="0.49803921569999998" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="140" id="m4k-Vc-PuY"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ArG-Wh-gLE">
                                 <rect key="frame" x="0.0" y="139" width="375" height="528"/>
                                 <subviews>
@@ -673,19 +666,19 @@
                                         <color key="textColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="Rayan@gmail.com" textAlignment="right" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="FX2-FX-cnd">
-                                        <rect key="frame" x="83" y="159" width="251" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="Yousef.at.tamimi@gmail.com" textAlignment="right" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="FX2-FX-cnd">
+                                        <rect key="frame" x="71" y="159" width="263" height="30"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="+966555555551" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fJj-Ee-zyf">
-                                        <rect key="frame" x="174" y="226" width="160" height="24"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="+966552522277" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fJj-Ee-zyf">
+                                        <rect key="frame" x="175" y="226" width="159" height="24"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ريان الدعفس" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I0N-ip-8Kj">
+                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="يوسف المسعد" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I0N-ip-8Kj">
                                         <rect key="frame" x="83" y="84" width="251" height="30"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -701,7 +694,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_pic" translatesAutoresizingMaskIntoConstraints="NO" id="mi8-LE-Lfp">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilepic" translatesAutoresizingMaskIntoConstraints="NO" id="mi8-LE-Lfp">
                                         <rect key="frame" x="132" y="-54" width="110" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="8Nt-AR-VEe"/>
@@ -776,6 +769,13 @@
                                     <constraint firstAttribute="trailing" secondItem="PWQ-X4-CEP" secondAttribute="trailing" constant="41" id="uUO-zv-4Mj"/>
                                 </constraints>
                             </view>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MGN-oh-8xC">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
+                                <color key="backgroundColor" red="0.2274509804" green="0.49803921569999998" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="m4k-Vc-PuY"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -823,6 +823,7 @@
                         <outlet property="profileName" destination="I0N-ip-8Kj" id="4b4-ni-XjT"/>
                         <outlet property="profilePhone" destination="fJj-Ee-zyf" id="Eml-im-keb"/>
                         <outlet property="profileTags" destination="IiB-UW-113" id="LzG-jc-e10"/>
+                        <outlet property="upperView" destination="MGN-oh-8xC" id="bLY-Fr-nUp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dkb-D6-SZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -840,10 +841,10 @@
         <image name="pencil" width="512" height="512"/>
         <image name="photos" width="133" height="111"/>
         <image name="profile" width="285" height="285"/>
-        <image name="profile_pic" width="300" height="300"/>
+        <image name="profilepic" width="429" height="413"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nZu-Kf-rb5"/>
+        <segue reference="4la-EJ-PhI"/>
         <segue reference="wSe-oo-rHv"/>
     </inferredMetricsTieBreakers>
 </document>

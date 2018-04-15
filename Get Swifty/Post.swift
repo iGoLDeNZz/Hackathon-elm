@@ -19,25 +19,26 @@ class post{
     var tag : String?
     var image : String?
     
-    init (u: String, p: String, t: String, d: String, n:String, s:Int) {
+    init (u: String, p: String, t: String, d: String, n:String, s:Int, im: String) {
         user_id = u
         post_id = p
         title = t
         description = d
         name = n
         status = s
-    }
-    
-    init(u: String, p: String, t: String, d: String, n:String, s:Int, tt: String, im: String) {
-        user_id = u
-        post_id = p
-        title = t
-        description = d
-        name = n
-        status = s
-        tag = tt
         image = im
     }
+    
+//    init(u: String, p: String, t: String, d: String, n:String, s:Int, tt: String, im: String) {
+//        user_id = u
+//        post_id = p
+//        title = t
+//        description = d
+//        name = n
+//        status = s
+//        tag = tt
+//        image = im
+//    }
     
     
 }

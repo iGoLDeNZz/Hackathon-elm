@@ -18,6 +18,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var profileEmail: UITextField!
     @IBOutlet weak var profileTags: UITextField!
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var upperView: UIView!
     
     var user_id : String = ""
     
@@ -28,7 +29,8 @@ class ProfileViewController: UIViewController {
         
         profileImage.layer.cornerRadius = 55
         profileImage.clipsToBounds = true
-        
+        self.view.sendSubview(toBack: upperView)
+
         
         findUserDetails()
     }
@@ -117,12 +119,10 @@ class ProfileViewController: UIViewController {
             case .success:
                 print("in success")
                 if let JSON = response.result.value {
-                    print("heey")
-                    debugPrint(response)
+                    debugPrint(JSON)
                 }
                 
             case .failure(let error):
-                print("in failure")
                 print(error)
                 
             }

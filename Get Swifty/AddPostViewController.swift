@@ -137,10 +137,6 @@ class AddPostViewController: UIViewController, UIImagePickerControllerDelegate, 
             case .failure(let error):
                 print("in failure")
                 print(error)
-                //debugPrint(response)
-                //                print(params)
-                //                print(headers)
-                
             }
         }
     }
